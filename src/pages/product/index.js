@@ -1,12 +1,7 @@
-import { useRouter } from "next/router";
-
 function Product() {
-    const router = useRouter();
-    const { productID } = router.query;
-    console.log(productID);
     return (
         <section>
-            <h2>Single Product of ID {productID}</h2>
+            <h2>Products List</h2>
 
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aspernatur, eum quod at

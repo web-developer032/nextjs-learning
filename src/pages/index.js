@@ -2,10 +2,19 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+    const router = useRouter();
+
+    const handlePlaceOrder = () => {
+        console.log("ORDER PLACED SUCCESSFULLY!");
+        router.push("/product");
+    };
+
     return (
         <>
             <Head>
@@ -15,7 +24,29 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
+            <header>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link href={"/blog"}>Blog</Link>
+                        </li>
+                        <li>
+                            <Link href={"/doc"}>Doc</Link>
+                        </li>
+                        <li>
+                            <Link href={"/product"}>Product</Link>
+                        </li>
+                        <li>
+                            <Link href={"/users"}>Users</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
             <main className={styles.main}>
+                <button className="btn" onClick={handlePlaceOrder}>
+                    Place Order
+                </button>
                 <div className={styles.description}>
                     <p>
                         Get started by editing&nbsp;
